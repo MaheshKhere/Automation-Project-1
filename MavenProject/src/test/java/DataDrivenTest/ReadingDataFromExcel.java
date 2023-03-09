@@ -1,15 +1,16 @@
 package DataDrivenTest;
 
 import java.io.FileInputStream;
-import java.io.IOException;
 
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.testng.annotations.Test;
 
 public class ReadingDataFromExcel {
 
-	public static void main(String[] args) throws IOException {
+	@Test
+	public void verifyexceldata() throws Exception {
 
 		FileInputStream file = new FileInputStream("F:\\BITUMEN PATCHES QUANTITY.xlsx");
 		XSSFWorkbook workbook = new XSSFWorkbook(file);

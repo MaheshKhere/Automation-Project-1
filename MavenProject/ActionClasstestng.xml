@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="ActionClassSuite">
+  <test thread-count="5" name="Test">
+    <classes>
+      <class name="actionsClass.Slider"/>
+      <class name="actionsClass.DragAndDrop"/>
+      <class name="actionsClass.MouseOver"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- ActionClassSuite -->

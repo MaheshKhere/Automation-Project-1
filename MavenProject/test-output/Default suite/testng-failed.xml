@@ -3,12 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="lumaPage.Allexecution">
+      <class name="DataDrivenTest.SendingDataToApplication">
         <methods>
-          <include name="lc"/>
-          <include name="Launch"/>
+          <include name="launchbrowser"/>
+          <include name="verifysenddata"/>
         </methods>
-      </class> <!-- lumaPage.Allexecution -->
+      </class> <!-- DataDrivenTest.SendingDataToApplication -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

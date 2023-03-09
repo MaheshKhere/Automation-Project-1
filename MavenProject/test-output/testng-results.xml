@@ -1,17 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-03-02T11:22:48Z" name="Default suite" finished-at="2023-03-02T11:22:56Z" duration-ms="7513">
+  <suite started-at="2023-03-09T14:55:03Z" name="DataDriverntestSuite" finished-at="2023-03-09T14:55:25Z" duration-ms="22271">
     <groups>
     </groups>
-    <test started-at="2023-03-02T11:22:48Z" name="Default test" finished-at="2023-03-02T11:22:56Z" duration-ms="7513">
-      <class name="log4j.Log4j">
-        <test-method signature="navigate()[pri:0, instance:log4j.Log4j@2c532cd8]" started-at="2023-03-02T11:22:48Z" name="navigate" finished-at="2023-03-02T11:22:56Z" duration-ms="7490" status="PASS">
+    <test started-at="2023-03-09T14:55:03Z" name="DataDriverTest" finished-at="2023-03-09T14:55:25Z" duration-ms="22271">
+      <class name="DataDrivenTest.SendingDataToApplication">
+        <test-method is-config="true" signature="launchbrowser()[pri:0, instance:DataDrivenTest.SendingDataToApplication@4e3958e7]" started-at="2023-03-09T14:55:03Z" name="launchbrowser" finished-at="2023-03-09T14:55:05Z" duration-ms="2422" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- navigate -->
-      </class> <!-- log4j.Log4j -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+        </test-method> <!-- launchbrowser -->
+        <test-method signature="verifysenddata()[pri:0, instance:DataDrivenTest.SendingDataToApplication@4e3958e7]" started-at="2023-03-09T14:55:06Z" name="verifysenddata" finished-at="2023-03-09T14:55:25Z" duration-ms="18738" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifysenddata -->
+      </class> <!-- DataDrivenTest.SendingDataToApplication -->
+      <class name="DataDrivenTest.ReadingDataFromExcel">
+        <test-method signature="verifyexceldata()[pri:0, instance:DataDrivenTest.ReadingDataFromExcel@77f80c04]" started-at="2023-03-09T14:55:05Z" name="verifyexceldata" finished-at="2023-03-09T14:55:06Z" duration-ms="1082" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyexceldata -->
+      </class> <!-- DataDrivenTest.ReadingDataFromExcel -->
+    </test> <!-- DataDriverTest -->
+  </suite> <!-- DataDriverntestSuite -->
 </testng-results>

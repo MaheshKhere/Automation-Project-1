@@ -1,7 +1,7 @@
 package DataDrivenTest;
 
 import java.io.FileInputStream;
-import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -10,15 +10,28 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class SendingDataToApplication {
+	public WebDriver driver;
+	public String baseurl = "https://www.moneycontrol.com/fixed-income/calculator/state-bank-of-india-sbi/fixed-deposit-calculator-SBI-BSB001.html?classic=true";
 
-	public static void main(String[] args) throws IOException {
-		System.setProperty("webdriver.chrome.driver", "D:\\chromedriver_win32 (2)\\chromedriver.exe");
-		WebDriver driver = new ChromeDriver();
+	@BeforeTest
+	public void launchbrowser() {
+		// System.setProperty("webdriver.chrome.driver", "D:\\chromedriver_win32
+		// (2)\\chromedriver.exe");
+		WebDriverManager.chromedriver().setup();
+		driver = new ChromeDriver();
 		driver.manage().window().maximize();
-		driver.get(
-				"https://www.moneycontrol.com/fixed-income/calculator/state-bank-of-india-sbi/fixed-deposit-calculator-SBI-BSB001.html?classic=true");
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	}
+
+	@Test
+	public void verifysenddata() throws Exception {
+		driver.get(baseurl);
 
 		driver.findElement(By.id("wzrk-cancel")).click();
 		FileInputStream file = new FileInputStream("C:\\Users\\HP\\Desktop\\Interest cal.xlsx");
@@ -65,7 +78,7 @@ public class SendingDataToApplication {
 			driver.findElement(By.xpath("//*[@id=\"fdMatVal\"]/div[2]/a[2]/img")).click(); // clear button
 
 		}
-
+		driver.close();
 	}
 
 }

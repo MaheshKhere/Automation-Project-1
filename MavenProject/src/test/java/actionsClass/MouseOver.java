@@ -6,10 +6,15 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.annotations.Test;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class MouseOver {
 
-	public static void main(String[] args) throws InterruptedException {
+	@Test
+	public void mouseover() throws Exception {
+		WebDriverManager.chromedriver().setup();
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("https://www.amazon.com");
@@ -33,6 +38,7 @@ public class MouseOver {
 		Thread.sleep(3000);
 		// act.moveToElement(searchbox).keyDown(Keys.SHIFT).sendKeys("shoe").build().perform();//
 		// shoe in uppercase
+		driver.close();
 	}
 
 }

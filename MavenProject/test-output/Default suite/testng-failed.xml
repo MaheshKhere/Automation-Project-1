@@ -3,11 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="extentReport.ExtentReport">
+      <class name="DataDrivenTest.SendingDataToApplication">
         <methods>
-          <include name="TestReport"/>
+          <include name="launchbrowser"/>
+          <include name="verifysenddata"/>
         </methods>
-      </class> <!-- extentReport.ExtentReport -->
+      </class> <!-- DataDrivenTest.SendingDataToApplication -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

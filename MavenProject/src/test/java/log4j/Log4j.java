@@ -8,6 +8,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 public class Log4j {
 	Logger log = LogManager.getLogger(Log4j.class);
 	String projectpath = System.getProperty("user.dir");
@@ -16,8 +18,7 @@ public class Log4j {
 
 	@Test
 	public void navigate() throws Exception {
-		System.setProperty("webdriver.chrome.driver", "D:\\chromedriver_win32 (2)\\chromedriver.exe");
-		log.info("Launch Broewser");
+		WebDriverManager.chromedriver().setup();
 		FileInputStream file = new FileInputStream(
 				projectpath + "\\src\\test\\java\\log4jResources\\log4jconfigure.properties");
 

@@ -12,16 +12,23 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class Slider {
 
 	@Test
-	public void verifyslider() {
+	public void verifyslider() throws Exception {
 		WebDriverManager.chromedriver().setup();
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("https://jqueryui.com/slider/");
+
+		// Switch to inside frame
 		driver.switchTo().frame(driver.findElement(By.className("demo-frame")));
 		Actions b = new Actions(driver);
 		WebElement drag = driver.findElement(By.id("slider"));
-		b.dragAndDropBy(drag, 200, 0).perform(); // on x-axis slider move so 200 but y-axix is zero
-		driver.close();
-	}
 
+		// Slider Move in Right direction
+		b.dragAndDropBy(drag, 200, 0).perform();
+		Thread.sleep(3000);
+
+		// Slider move in left direction
+		b.dragAndDropBy(drag, -100, 0).perform();
+		// driver.close();
+	}
 }

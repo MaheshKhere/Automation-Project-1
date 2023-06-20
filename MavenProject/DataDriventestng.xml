@@ -2,6 +2,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="DataDriverntestSuite">
   <test thread-count="5" name="DataDriverTest">
+	  <parameter name="browser" value="chrome"></parameter>
     <classes>
       <class name="DataDrivenTest.ReadingDataFromExcel"/>
       <class name="DataDrivenTest.SendingDataToApplication"/>

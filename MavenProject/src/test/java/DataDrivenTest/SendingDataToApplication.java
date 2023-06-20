@@ -68,16 +68,18 @@ public class SendingDataToApplication {
 			driver.findElement(By.xpath("//*[@id=\"fdMatVal\"]/div[2]/a[1]/img")).click(); // calculate button
 
 			String actualvalue = driver.findElement(By.xpath("//*[@id=\"resp_matval\"]/strong")).getText(); // expected
-																											// value
+			// value
 
 			if ((Double.parseDouble(actualvalue)) == expvalue) {
 				System.out.println("Test Passed");
 			} else {
 				System.out.println("Test Failed");
 			}
+
 			driver.findElement(By.xpath("//*[@id=\"fdMatVal\"]/div[2]/a[2]/img")).click(); // clear button
 
 		}
+
 		driver.close();
 	}
 

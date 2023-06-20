@@ -18,16 +18,19 @@ public class ReadingDataFromExcel {
 		// XSSFSheet sheet = workbook.getSheetAt(0);
 		int rowcount = sheet.getLastRowNum(); // return row count
 		int columncount = sheet.getRow(0).getLastCellNum(); // returns column/cell count
+//		XSSFRow row = sheet.getRow(2);
+//		XSSFCell cell = row.getCell(1);
+//		String cv = cell.toString();
+//		System.out.println(cv);
+
 		for (int i = 0; i < rowcount; i++) {
 			XSSFRow currentrow = sheet.getRow(i); // focus on current row
 			for (int x = 0; x < columncount; x++) {
 				String value = currentrow.getCell(x).toString(); // read the value from cell
 				System.out.print("  " + value);
-
 			}
+
 			System.out.println();
 		}
-
 	}
-
 }

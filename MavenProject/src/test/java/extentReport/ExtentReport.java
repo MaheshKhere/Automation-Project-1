@@ -10,19 +10,19 @@ import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
+import lumatestcases.BaseClass;
 
-public class ExtentReport {
-	public WebDriver driver;
-	String projectpath = System.getProperty("user.dir");
+public class ExtentReport extends BaseClass {
+	public static WebDriver driver;
+	public static String projectpath = System.getProperty("user.dir");
 	public static ExtentHtmlReporter htmlreport;
 	public static ExtentReports reports;
 	public static ExtentTest test;
 
 	@Test
-	public void TestReport() {
+	public void ExtentReport() {
 		// extentreports dependencies is 3.1.5 from com.aventstack
-		htmlreport = new ExtentHtmlReporter(projectpath + "\\extentreport\\Test Report.html");
+		htmlreport = new ExtentHtmlReporter(projectpath + "\\extentreport\\Test New Report.html");
 		System.out.println(projectpath);
 		htmlreport.config().setDocumentTitle("Automation test");
 		htmlreport.config().setReportName("Smoke Test");
@@ -35,11 +35,13 @@ public class ExtentReport {
 		test = reports.createTest("TestReport");
 		test.log(Status.INFO, "Open browser"); // return type status string details
 
-		// System.setProperty("webdriver.chrome.driver", "D:\\chromedriver_win32
-		// (2)\\chromedriver.exe");
-		WebDriverManager.chromedriver().setup();
+		System.setProperty("webdriver.chrome.driver",
+				"F:\\new version Chromedriver\\chromedriver_win32 (2)\\chromedriver.exe");
+		// WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver();
 		driver.get("https://www.amazon.com");
 		reports.flush();
+
 	}
+
 }

@@ -3,12 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="DataDrivenTest.SendingDataToApplication">
+      <class name="log4j.Log4j">
         <methods>
-          <include name="launchbrowser"/>
-          <include name="verifysenddata"/>
+          <include name="navigate"/>
         </methods>
-      </class> <!-- DataDrivenTest.SendingDataToApplication -->
+      </class> <!-- log4j.Log4j -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
